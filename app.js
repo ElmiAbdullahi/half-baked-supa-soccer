@@ -14,7 +14,7 @@ const finishGameButton = document.getElementById('finish-game-button');
 const teamOneLabel = document.getElementById('team-one-name');
 const teamTwoLabel = document.getElementById('team-two-name');
 
-checkAuth();
+// checkAuth();
 
 let name1 = '';
 let name2 = '';
@@ -23,12 +23,17 @@ let score2 = 0;
 
 nameForm.addEventListener('submit', (e) => {
     // don't forget to prevent the default form behavior!
-
+    e.preventDefault();
     // get the name data from the form
-
+    const data = new FormData(nameForm);
     // set the state to this data from the form
-
+    name1 = data.get('team-one');
+    name2 = data.get('team-two');
+    teamOneLabel.textContent = name1;
+    teamTwoLabel.textContent = name2;
     // reset the form values
+    nameForm.reset();
+    
 
     displayCurrentGameEl();
 });

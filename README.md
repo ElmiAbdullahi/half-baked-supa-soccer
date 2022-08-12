@@ -31,3 +31,19 @@ https://alchemycodelab.github.io/web-01-soccer-scorekeeper-supabase/
 | IMPURE: `displayAllGames()` : clears out and appends to games div                                                            | .5  |
 | ASYNC: `createGame(game)` : creates a game for currently logged in user in supabase                                          | 2   |
 | ASYNC: `getGames()` : returns games for currently logged in user from supabase                                               | 2   |
+
+
+## Plan
+- make a table in supabase
+- fetch the table
+- update past games
+- add and subract points
+- user should be able to name their teams 
+
+## What doesn't work as it should
+
+- add team names form 
+how
+- add and subtract score buttons
+- score board display
+- past games 
