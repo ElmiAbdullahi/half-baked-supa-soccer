@@ -44,6 +44,15 @@ https://alchemycodelab.github.io/web-01-soccer-scorekeeper-supabase/
 
 ++add team names form 
 how
-- add and subtract score buttons
+++add and subtract score buttons
 ++ score board display
 - past games 
+++ build table and link keys to supabase
+++build currentGame object 
+++Send that to supabase
+++call function on finishGame
+++check supabase to see update
+++fetch table back
+++loop through table
+++render and append
+++on load all past games should populate

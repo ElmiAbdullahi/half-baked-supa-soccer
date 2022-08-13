@@ -64,7 +64,13 @@ teamTwoSubtractButton.addEventListener('click', () => {
 
 finishGameButton.addEventListener('click', async () => {
     // create a new game using the current game state
-
+    const currentGame = {
+        name1: name1,
+        name2: name2,
+        score1: score1,
+        score2: score2
+    };
+    await createGame(currentGame);
     // after creating this new game, re-fetch the games to get the updated state and display them (hint: call displayAllGames())
 
     name1 = '';
@@ -73,11 +79,14 @@ finishGameButton.addEventListener('click', async () => {
     score2 = 0;
 
     displayCurrentGameEl();
+    await displayAllGames();
+    
 });
 
 // on load . . .
-window.addEventListener('', async () => {
+window.addEventListener('load', async () => {
     // display all past games (hint: call displayAllGames())
+    await displayAllGames();
 });
 
 function displayCurrentGameEl() {
@@ -96,11 +105,18 @@ function displayCurrentGameEl() {
 
 }
 
-function displayAllGames() {
+async function displayAllGames() {
     // clear out the past games list in the DOM
+    pastGamesEl.textContent = '';
     // FETCH ALL GAMES from supabase
+    const pastGames = await getGames();
     // loop through the past games
+    for (let game of pastGames) {
     // render and append a past game for each past game in state
+        const newGame = renderGame(game);
+
+        pastGamesEl.append(newGame);
+    }
 }
 
 displayCurrentGameEl();
