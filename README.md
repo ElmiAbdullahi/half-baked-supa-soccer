@@ -42,7 +42,7 @@ https://alchemycodelab.github.io/web-01-soccer-scorekeeper-supabase/
 
 ## What doesn't work as it should
 
-- add team names form 
+++add team names form 
 how
 - add and subtract score buttons
 - score board display
